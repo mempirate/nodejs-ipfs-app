@@ -1,0 +1,22 @@
+'use strict'
+
+const configure = require('../lib/configure')
+
+module.exports = configure(({ ky }) => {
+  return async (path, options) => {
+    options = options || {}
+
+    const searchParams = new URLSearchParams(options.searchParams)
+    searchParams.set('arg', `${path}`)
+    if (options.recursive != null) searchParams.set('recursive', options.recursive)
+
+    const res = await ky.post('pin/add', {
+      timeout: options.timeout,
+      signal: options.signal,
+      headers: options.headers,
+      searchParams
+    }).json()
+
+    return (res.Pins || []).map(hash => ({ hash }))
+  }
+})

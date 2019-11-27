@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-ipfs-app",
+  "version": "1.0.0",
+  "description": "Demo application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipfs",
+    "ipfs-http-client"
+  ],
+  "author": "Jonas Bostoen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ipfs-http-client": "^40.0.0"
+  }
+}

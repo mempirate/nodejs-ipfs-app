@@ -1,0 +1,1 @@
+exports.extract = require('./extract')
